@@ -1,0 +1,17 @@
+.article-piscine {
+  background-color: lightblue;
+}
+
+.title-piscine {
+  font-size: 30px;
+  text-decoration: underline;
+}
+
+.img-piscine {
+  width: 200px;
+  border: 1px solid black;
+}
+
+.text-piscine {
+  color: red;
+}
