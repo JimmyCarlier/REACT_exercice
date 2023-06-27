@@ -57,13 +57,6 @@ btn.addEventListener("click", () => {
     },
     input[0].value
   );
-  const createParaElement = ElementNode(
-    "div",
-    {
-      class: "article",
-    },
-    input[1].value
-  );
   const createImgElement = ElementNode(
     "img",
     {
@@ -72,13 +65,20 @@ btn.addEventListener("click", () => {
     },
     ""
   );
+  const createParaElement = ElementNode(
+    "div",
+    {
+      class: "article",
+    },
+    input[1].value
+  );
 
   //   on place les relations parent enfant
   container.appendChild(containOfElement);
   containOfElement.append(
     createTitleElement,
-    createParaElement,
-    createImgElement
+    createImgElement,
+    createParaElement
   );
 
   createImgElement.style.width = "300px";
