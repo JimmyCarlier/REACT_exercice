@@ -1,19 +1,32 @@
-const button = document.querySelector("button");
+const divRoot = document.querySelector("#root");
 
-// au click sur le bouton
-button.addEventListener("click", async () => {
-  const divRoot = document.querySelector("#root");
+// const contactFormComposent = () => {
+//   const formElement = createNodeElement("form");
+//   const inputText = createNodeElement("input", {
+//     type: "texte",
+//     class: "contact-text",
+//   });
+//   formElement.appendChild(inputText);
 
-  // je fais un appel fetch (asynchrone) vers l'url de l'api
-  const responseJson = await fetch("https://www.themealdb.com/api/json/v1/1/search.php?s");
-  // quand j'ai le résultat, je converti le json récupéré en Javascript
+//   const submitElementBtn = createNodeElement(
+//     "button",
+//     {
+//       type: "submit",
+//       class: "contact-submit",
+//     },
+//     "Valider"
+//   );
+//   formElement.appendChild(submitElementBtn);
+//   divRoot.appendChild(formElement);
+// };
+
+const mealListComposent = async () => {
+  const responseJson = await fetch(
+    "https://www.themealdb.com/api/json/v1/1/search.php?s"
+  );
   const responseJavascript = await responseJson.json();
 
-  //  j'utilise foreach pour faire une boucle sur le résultat
-  // et pour chaque élément (recette), j'affiche le titre et l'image
   responseJavascript.meals.forEach((meal) => {
-    // j'utilise ma fonction createNodeElement pour créer un h2
-    // avec en valeur le titre de la recette de l'api
     const mealTitleElement = createNodeElement(
       "h2",
       {
@@ -22,19 +35,44 @@ button.addEventListener("click", async () => {
       meal.strMeal
     );
 
-    // j'insère le titre dans ma div root
     divRoot.appendChild(mealTitleElement);
 
-    // j'utilise ma fonction createNodeElement pour créer une image
-    // avec en valeur l'image de la recette de l'api
     const mealImgElement = createNodeElement("img", {
       src: meal.strMealThumb,
     });
 
-    // j'insère l'image dans ma div root
     divRoot.appendChild(mealImgElement);
   });
-});
+};
+
+const categoryListComponent = async () => {
+  const returnJson = await fetch(
+    " https://www.themealdb.com/api/json/v1/1/categories.php"
+  );
+  const returnJavaS = await returnJson.json();
+
+  returnJavaS.categories.forEach((element) => {
+    const divElement = createNodeElement("div", {
+      class: "mealList",
+    });
+    divRoot.appendChild(divElement);
+
+    const listCategory = createNodeElement(
+      "h2",
+      {
+        class: "listCate",
+      },
+      element.strCategory
+    );
+    divElement.appendChild(listCategory);
+
+    const imgCategory = createNodeElement("img", {
+      class: "img-api",
+      src: element.strCategoryThumb,
+    });
+    divElement.appendChild(imgCategory);
+  });
+};
 
 const createNodeElement = (tagType, attributes, text = "") => {
   const nodeElement = document.createElement(tagType);
@@ -47,6 +85,10 @@ const createNodeElement = (tagType, attributes, text = "") => {
 
   return nodeElement;
 };
+
+// contactFormComposent();
+categoryListComponent();
+mealListComposent();
 
 // data.meals.forEach((element) => {
 //   const mealTitle = element.strMeal;
