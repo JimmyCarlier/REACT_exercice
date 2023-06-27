@@ -1,25 +1,27 @@
 // On récupère la div Root 
 const divRoot = document.querySelector("#root");
 
-// const contactFormComposent = () => {
-//   const formElement = createNodeElement("form");
-//   const inputText = createNodeElement("input", {
-//     type: "texte",
-//     class: "contact-text",
-//   });
-//   formElement.appendChild(inputText);
+const contactFormComposent = () => {
+  const formElement = createNodeElement("form");
+  const inputText = createNodeElement("input", {
+    type: "texte",
+    class: "contact-text",
+  });
+  formElement.appendChild(inputText);
 
-//   const submitElementBtn = createNodeElement(
-//     "button",
-//     {
-//       type: "submit",
-//       class: "contact-submit",
-//     },
-//     "Valider"
-//   );
-//   formElement.appendChild(submitElementBtn);
-//   divRoot.appendChild(formElement);
-// };
+  const submitElementBtn = createNodeElement(
+    "button",
+    {
+      type: "submit",
+      class: "contact-submit",
+    },
+    "Valider"
+  );
+  formElement.appendChild(submitElementBtn);
+  divRoot.appendChild(formElement);
+};
+
+
 // On appelle l'API afin de récupérer ses donnée pour les afficher sur notre page Html
 const mealListComposent = async () => {
   const responseJson = await fetch(
@@ -45,6 +47,8 @@ const mealListComposent = async () => {
     divRoot.appendChild(mealImgElement);
   });
 };
+
+
 // Même cas que le fetch au dessus
 const categoryListComponent = async () => {
   const returnJson = await fetch(
@@ -74,6 +78,8 @@ const categoryListComponent = async () => {
     divElement.appendChild(imgCategory);
   });
 };
+
+
 // On créée une constante qui va créée des balises en fonction des informations récupérer sur l'API (type de balise, classe/source etc.., et on ajotue une option de texteContent qui de base sera initialiser vide)
 const createNodeElement = (tagType, attributes, text = "") => {
   const nodeElement = document.createElement(tagType);
@@ -87,14 +93,8 @@ const createNodeElement = (tagType, attributes, text = "") => {
   return nodeElement;
 };
 
-// contactFormComposent();
+contactFormComposent();
 // On appelle les fonction a l'initialisation de la page
 categoryListComponent();
 mealListComposent();
 
-// data.meals.forEach((element) => {
-//   const mealTitle = element.strMeal;
-//   const mealTitleElement = createNodeElement("h2", { class: "meal-title" }, mealTitle);
-//   console.log(mealTitleElement);
-//   divRoot.appendChild(mealTitleElement);
-// });
