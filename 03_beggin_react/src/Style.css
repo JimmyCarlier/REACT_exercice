@@ -1,0 +1,48 @@
+@font-face {
+    font-family: "roboto-regular";
+    src: url(../public/Roboto/Roboto-Regular.ttf);
+}
+body{
+    background-color: rgba(0, 0, 0, 0.773);
+}
+
+.banner{
+    background-color: black;
+    width: 20%;
+    margin: 0 auto;
+    overflow: hidden;
+    border-radius: 15px;
+    border: 1px solid rgb(99, 234, 234);
+}
+h1{
+    text-align: center;
+    font-family: "roboto-regular";
+    color: azure;
+    font-size: 1.3rem;
+    padding-bottom: 60px;
+}
+.containerOfProfile{
+    display: flex;
+    flex-direction: column;
+    justify-content: left;
+    align-items: left;
+    margin: 0 auto;
+    font-family: "roboto-regular";
+    color: white;
+    background-color: rgba(255, 255, 255, 0.071) ;
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    position: relative;
+    padding-top: 40px;
+}
+
+.containerOfProfile p {
+    padding-left: 10px;
+}
+
+.cat{
+    width: 100px;
+    border-radius: 100%;
+    position: absolute;
+    top: -30%;
+    left : 35%
+}

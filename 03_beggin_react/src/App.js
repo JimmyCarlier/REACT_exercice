@@ -1,7 +1,15 @@
+import Profile from "./Profile";
+import './Style.css'
+
+const result = prompt(`Qui es-tu ?`)
+
 function App() {
   return (
     <header>
-      <p>Bonjour La piscine</p>
+      <div class="banner">
+        <h1>Bonjour {result}</h1>
+        <Profile />
+      </div>
     </header>
   );
 }
