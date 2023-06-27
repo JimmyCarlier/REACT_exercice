@@ -1,3 +1,4 @@
+// On récupère la div Root 
 const divRoot = document.querySelector("#root");
 
 // const contactFormComposent = () => {
@@ -19,13 +20,13 @@ const divRoot = document.querySelector("#root");
 //   formElement.appendChild(submitElementBtn);
 //   divRoot.appendChild(formElement);
 // };
-
+// On appelle l'API afin de récupérer ses donnée pour les afficher sur notre page Html
 const mealListComposent = async () => {
   const responseJson = await fetch(
     "https://www.themealdb.com/api/json/v1/1/search.php?s"
   );
   const responseJavascript = await responseJson.json();
-
+  // On créee une boucle pour cibler toutes les catégories de l'API et les afficher sur notre page Html via la fonction createNodeElement
   responseJavascript.meals.forEach((meal) => {
     const mealTitleElement = createNodeElement(
       "h2",
@@ -34,9 +35,9 @@ const mealListComposent = async () => {
       },
       meal.strMeal
     );
-
+      // La div Root va prendre comme enfant mealTitleElement
     divRoot.appendChild(mealTitleElement);
-
+    // On stock les images de l'API dans la constante
     const mealImgElement = createNodeElement("img", {
       src: meal.strMealThumb,
     });
@@ -44,7 +45,7 @@ const mealListComposent = async () => {
     divRoot.appendChild(mealImgElement);
   });
 };
-
+// Même cas que le fetch au dessus
 const categoryListComponent = async () => {
   const returnJson = await fetch(
     " https://www.themealdb.com/api/json/v1/1/categories.php"
@@ -73,7 +74,7 @@ const categoryListComponent = async () => {
     divElement.appendChild(imgCategory);
   });
 };
-
+// On créée une constante qui va créée des balises en fonction des informations récupérer sur l'API (type de balise, classe/source etc.., et on ajotue une option de texteContent qui de base sera initialiser vide)
 const createNodeElement = (tagType, attributes, text = "") => {
   const nodeElement = document.createElement(tagType);
 
@@ -87,6 +88,7 @@ const createNodeElement = (tagType, attributes, text = "") => {
 };
 
 // contactFormComposent();
+// On appelle les fonction a l'initialisation de la page
 categoryListComponent();
 mealListComposent();
 
