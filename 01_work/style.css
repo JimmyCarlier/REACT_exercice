@@ -1,0 +1,80 @@
+@font-face {
+  font-family: "poppins-regular";
+  src: url(font/Poppins-Regular.ttf);
+}
+
+.hidden {
+  display: none;
+}
+
+body {
+  background: linear-gradient(60deg,#BBD0FF, #B8C0FF, #C8B6FF);
+  background-repeat: no-repeat;
+  color: #8f94fb;
+  font-size: 1.1rem;
+  font-family: "poppins-regular";
+  height: 100vh;
+}
+
+.main {
+  width: 70%;
+  background-color: white;
+  text-align: center;
+  margin-bottom: 20px;
+  margin: auto;
+  border-radius: 15px;
+}
+
+.Letgo,
+.remove {
+  margin: auto;
+  text-align: center;
+  margin-top: 15px;
+  padding: 10px 10px;
+  border: none;
+  border-radius: 15px;
+  width: 100px;
+  text-align: center;
+  font-size: 1.3rem;
+}
+
+.btnContent{
+    text-align: center;
+}
+
+.choose {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  justify-content: center;
+  margin: 100px auto;
+  gap: 70px;
+  margin-bottom: 50px;
+}
+
+h1, .Letgo, .remove {
+  text-align: center;
+  color: #8f94fb;
+}
+
+input {
+  padding: 10px 10px;
+  border: none;
+  border-radius: 15px;
+  background-color: #FFD6FF;
+}
+
+input::placeholder {
+  font-style: italic;
+}
+
+input#file-upload-button {
+  background-color: red;
+}
+
+.rangeCa{
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+}
