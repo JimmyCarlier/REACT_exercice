@@ -94,7 +94,6 @@ const createNodeElement = (tagType, attributes, text = "") => {
 };
 
 contactFormComposent();
-// On appelle les fonction a l'initialisation de la page
 categoryListComponent();
 mealListComposent();
 

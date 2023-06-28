@@ -3,7 +3,7 @@
     src: url(../public/Roboto/Roboto-Regular.ttf);
 }
 body{
-    background-color: rgba(0, 0, 0, 0.773);
+    background-color: rgba(0, 0, 0, 0.9);
 }
 
 .banner{
@@ -45,4 +45,20 @@ h1{
     position: absolute;
     top: -30%;
     left : 35%
+}
+
+.blogVoyage{
+    color: rgba(255, 255, 255, 0.367);
+    width: 400px;
+    text-align: center; 
+}
+.blogVoyage img{
+    width: 300px;
+    height: 150px;
+}
+
+.containerOfVoyage{
+    display: flex;
+    gap: 100px;
+    justify-content: center;
 }
