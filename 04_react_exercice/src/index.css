@@ -1,0 +1,91 @@
+@font-face {
+  font-family: raleway-regular;
+  src: url(../public/font/Raleway-Italic-VariableFont_wght.ttf);
+}
+*,
+::before,
+::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
+    monospace;
+}
+
+nav ul {
+  display: flex;
+  padding: 30px 80px;
+  justify-content: space-between;
+  background-color: #a6cd3a;
+  align-items: center;
+  font-family: "raleway-regular";
+  box-shadow: rgba(0, 0, 0, 0.12) 0px 1px 3px, rgba(0, 0, 0, 0.24) 0px 1px 2px;
+}
+
+nav ul li {
+  list-style: none;
+}
+
+.logo {
+  width: 100px;
+  border-radius: 100%;
+  animation: App-logo-spin infinite 20s linear;
+  box-shadow: rgba(0, 0, 0, 0.12) 0px 1px 3px, rgba(0, 0, 0, 0.24) 0px 1px 2px;
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.contentOfFood {
+  display: flex;
+  justify-content: space-around;
+  padding-top: 100px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.boxOfFood img {
+  width: 350px;
+  box-shadow: rgba(17, 17, 26, 0.7) 0px 0px 16px;
+  margin-bottom: 30px;
+  border-radius: 31% 69% 23% 77% / 66% 18% 82% 34%
+}
+
+.boxOfFood h1 {
+  padding-bottom: 30px;
+  font-family: "raleway-regular";
+}
+
+footer {
+  margin-top: 100px;
+}
+footer ul {
+  display: flex;
+  padding: 30px 80px;
+  justify-content: space-between;
+  background-color: #4f9d69;
+  align-items: center;
+  font-family: "raleway-regular";
+  box-shadow: rgba(0, 0, 0, 0.12) 0px 1px 3px, rgba(0, 0, 0, 0.24) 0px 1px 2px;
+}
+footer ul li {
+  list-style: none;
+}
