@@ -39,7 +39,7 @@ const UserExperience = () => {
             <li>Description du poste : {element.description}</li>
             <li>
               A commencé le : {element.startDate} Et terminé le :
-              {element.isCurrent ? <p className="notFinish">"Pas terminé</p> : element.endDate}
+              {element.isCurrent ? <p className="notFinish">Pas terminé</p> : element.endDate}
             </li>
           </ul>
         </div>
