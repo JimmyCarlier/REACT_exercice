@@ -1,0 +1,93 @@
+*,
+::before,
+::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+nav ul{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-bottom: 50px;
+  padding-top: 20px;
+}
+.headerLogo img{
+  width: 80px;
+}
+.navLink{
+  display: flex;
+  gap: 30px;
+  padding-right: 20px;
+}
+.headerLogo{
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  padding-left: 20px;
+}
+
+.headerLogo, .navLink li{
+  list-style: none;
+}
+
+.userAccount{
+  display: flex;
+  flex-direction: column;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  width: 300px;
+  margin: 100px auto;
+  position: relative;
+}
+.userAccount img{
+  width: 100px;
+  border-radius: 100%;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  align-self: center;
+  position: absolute;
+  top: -20%;
+}
+
+.informationUser{
+  padding-top: 70px;
+  padding-left: 20px;
+  padding-bottom: 20px;
+}
+
+.contentOfExperience{
+  display: flex;
+  padding-top: 50px;
+  justify-content: center;
+  gap: 100px;
+}
+
+.boxContent{
+  width: 20%;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  margin: 0 auto;
+  position: relative;
+  padding: 50px;
+  margin-bottom: 50px;
+}
+
+.boxContent h1{
+  padding-bottom: 20px;
+}
+
+.boxContent li{
+  list-style: none;
+}
+
+.notFinish{
+  color: red;
+}

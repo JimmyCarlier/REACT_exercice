@@ -2,6 +2,7 @@
   font-family: raleway-regular;
   src: url(../public/font/Raleway-Italic-VariableFont_wght.ttf);
 }
+
 *,
 ::before,
 ::after {
@@ -26,12 +27,14 @@ code {
 
 nav ul {
   display: flex;
-  padding: 30px 80px;
+  padding: 30px;
   justify-content: space-between;
-  background-color: #a6cd3a;
+  background-color: #303030;
   align-items: center;
   font-family: "raleway-regular";
-  box-shadow: rgba(0, 0, 0, 0.12) 0px 1px 3px, rgba(0, 0, 0, 0.24) 0px 1px 2px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+  border-radius: 8px;
+  color: white;
 }
 
 nav ul li {
@@ -39,53 +42,77 @@ nav ul li {
 }
 
 .logo {
-  width: 100px;
-  border-radius: 100%;
-  animation: App-logo-spin infinite 20s linear;
-  box-shadow: rgba(0, 0, 0, 0.12) 0px 1px 3px, rgba(0, 0, 0, 0.24) 0px 1px 2px;
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  animation: App-logo-spin infinite 3s linear;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
 }
 
 @keyframes App-logo-spin {
-  from {
+  0% {
     transform: rotate(0deg);
   }
-  to {
-    transform: rotate(360deg);
+  25%{
+    transform: rotate(-20deg);
+  }
+  50%{
+    transform: rotate(20deg);
+  }
+  100% {
+    transform: rotate(0deg);
   }
 }
 
 .contentOfFood {
   display: flex;
-  justify-content: space-around;
+  justify-content: center;
   padding-top: 100px;
   margin: 0 auto;
   text-align: center;
+  gap: 35px;
 }
 
 .boxOfFood img {
-  width: 350px;
-  box-shadow: rgba(17, 17, 26, 0.7) 0px 0px 16px;
-  margin-bottom: 30px;
-  border-radius: 31% 69% 23% 77% / 66% 18% 82% 34%
+  width: 300px;
+  height: 300px;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+  border-radius: 8px;
+  object-fit: cover;
 }
 
 .boxOfFood h1 {
-  padding-bottom: 30px;
+  padding: 20px 0;
   font-family: "raleway-regular";
+  font-size: 24px;
 }
 
 footer {
   margin-top: 100px;
 }
+
 footer ul {
   display: flex;
-  padding: 30px 80px;
-  justify-content: space-between;
-  background-color: #4f9d69;
+  padding: 30px;
+  justify-content: center;
+  background-color: #303030;
   align-items: center;
   font-family: "raleway-regular";
-  box-shadow: rgba(0, 0, 0, 0.12) 0px 1px 3px, rgba(0, 0, 0, 0.24) 0px 1px 2px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+  border-radius: 8px;
 }
+
 footer ul li {
   list-style: none;
+  margin: 0 10px;
+}
+
+footer ul li{
+  color: #ffffff;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+footer ul li a:hover {
+  color: #a6cd3a;
 }
