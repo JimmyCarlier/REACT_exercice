@@ -1,0 +1,91 @@
+*,
+::before,
+::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+li{
+  list-style: none;
+}
+
+nav ul {
+  display: flex;
+  gap: 50px;
+  justify-content: space-around;
+  align-items: center;
+  background-color: red;
+}
+
+h1{
+  font-size: 3rem;
+}
+
+.menuBar {
+  display: flex;
+  gap: 50px;
+}
+
+.mainCocktail{
+  text-align: center;
+  padding: 20px;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  width: 280px;
+  margin: 50px auto;
+}
+
+.mainCocktail h2 + p{
+  padding-bottom: 30px;
+}
+
+.mainCocktail h2{
+  padding-bottom: 20px;
+}
+
+.leftOfBox{
+  text-align: left;
+}
+
+.latestCock{
+  display: flex;
+  justify-content: center;
+  gap: 100px;
+  margin: 0 auto;
+}
+
+.contentCock{
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  width: 280px;
+  padding: 20px;
+}
+
+.contentCock h2, .contentCock h2+p{
+  text-align: center;
+  padding-bottom: 30px;
+}
+
+.allCocktails{
+  display: flex;
+  margin-top: 50px;
+}
+
+.cocktails{
+  width: 280px;
+  margin: 0 auto;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  padding: 20px;
+}
+
+.cocktails h2{
+  text-align: center;
+  padding-bottom: 30px;
+}
+
+.userInformation{
+  position: absolute;
+  top: 10%;
+  left: 80%;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  padding: 20px;
+}

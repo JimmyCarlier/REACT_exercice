@@ -1,16 +1,5 @@
-const ProfileUser = () => {
-  const userInfosFromFakeApi = {
-    firstName: "John",
-    lastName: "Doe",
-    age: 42,
-    email: "contact@johndoe.fr",
-    phone: "0123456789",
-    adress: "1 rue de la Paix",
-    city: "Paris",
-    zipCode: "75000",
-    country: "France",
-    job: "Développeur web",
-  };
+const ProfileUser = ({userInfosFromFakeApi}) => {
+
   return (
     <div className="userAccount">
       <img src="./img/user.jpg" alt="" />

@@ -91,3 +91,58 @@ nav ul{
 .notFinish{
   color: red;
 }
+
+.containerOfComments{
+  display: flex;
+  width: 90%;
+  margin: 0 auto;
+  margin-bottom: 200px;
+  gap: 300px;
+  justify-content: center;
+}
+
+.cardOfComments{
+  width: 300px;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  padding: 20px 20px;
+}
+
+.cardOfComments h2{
+  font-size: 1.2rem;
+  text-align: left;
+  position: relative;
+  padding-bottom: 50px;
+}
+
+.cardOfComments h2::after{
+  content: "";
+  width: 200px;
+  height: 25px;
+  background-color: #0097bd5d;
+  position: absolute;
+  top: 52%;
+  left: 0;
+}
+
+.notImportent{
+  font-size: 0.8rem;
+  color: rgba(0, 0, 0, 0.315);
+}
+
+.sectionOfComments{
+  padding-left: 50px;
+  padding-bottom: 100px;
+  width: 100%;
+  position: relative;
+}
+
+.sectionOfComments::after{
+  content : "";
+  position: absolute;
+  top: 25%;
+  margin-left: 50px;
+  left: 0;
+  width: 1200px;
+  height: 10px;
+  background-color: #0097bd5d;
+}
