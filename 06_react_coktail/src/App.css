@@ -10,21 +10,35 @@ li{
   list-style: none;
 }
 
+.logo{
+  width: 100px;
+  border-radius: 100%;
+}
+
 nav ul {
   display: flex;
   gap: 50px;
   justify-content: space-around;
   align-items: center;
-  background-color: red;
+  background-color: #820263;
+}
+body{
+  background-color: #8202624f;
 }
 
 h1{
   font-size: 3rem;
+  color: #FB8B24;
 }
 
 .menuBar {
   display: flex;
   gap: 50px;
+  color: #04A777;
+}
+
+.user{
+  color :#D90368;
 }
 
 .mainCocktail{
@@ -33,6 +47,10 @@ h1{
   box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
   width: 280px;
   margin: 50px auto;
+  background: url(../public/img/caraibe.jpg);
+  background-size: cover;
+  color: #000000;
+  font-weight: 1000;
 }
 
 .mainCocktail h2 + p{
@@ -58,6 +76,10 @@ h1{
   box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
   width: 280px;
   padding: 20px;
+  background: url(../public/img/caraibe.jpg);
+  background-size: cover;
+  color: #000000;
+  font-weight: 1000;
 }
 
 .contentCock h2, .contentCock h2+p{
@@ -75,6 +97,10 @@ h1{
   margin: 0 auto;
   box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
   padding: 20px;
+  background: url(../public/img/caraibe.jpg);
+  background-size: cover;
+  color: #000000;
+  font-weight: 1000;
 }
 
 .cocktails h2{
@@ -84,7 +110,7 @@ h1{
 
 .userInformation{
   position: absolute;
-  top: 10%;
+  top: 15%;
   left: 80%;
   box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
   padding: 20px;
