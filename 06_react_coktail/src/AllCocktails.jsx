@@ -5,9 +5,8 @@ const AllCocktails = ({ publishedCocktails }) => {
     <div className="allCocktails">
       {publishedCocktails.map((Cocktail) => {
         return (
-          Cocktail.isPublished && (
             <SingleCocktail Cocktail={Cocktail}/>
-          )
+
         );
       })}
     </div>

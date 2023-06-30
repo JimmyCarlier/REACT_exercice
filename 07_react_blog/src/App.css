@@ -1,0 +1,38 @@
+*,
+::before,
+::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+.logo{
+  width: 30px;
+  position: relative;
+}
+li{
+  list-style: none;
+}
+
+.navigation{
+  display: flex;
+  gap: 80px;
+}
+header{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
+}
+
+ul{
+  display: flex;
+  gap: 2px;
+  justify-content: center;
+  align-items: center;
+}
+
+.number{
+  font-weight: 1000;
+  color: red;
+}
