@@ -1,19 +1,12 @@
-const MainCoktail = ({ cocktailsFromApi }) => {
+import SingleCocktail from "./SingleCocktail";
 
-  let table = [];
-  cocktailsFromApi.map((element) => {
-    element.isPublished && table.push(element);
-    return table;
-  });
-
-  const resultTable = table[Math.floor(Math.random() * table.length)]
+const MainCoktail = ({ publishedCocktails }) => {
   
+const Cocktail = publishedCocktails[Math.floor(Math.random()*publishedCocktails.length)]
+
   return (
-    <div className="mainCocktail">
-      <h2>Cocktail du Jour</h2>
-      <p>{resultTable.name}</p>
-      <p className="leftOfBox">Prix :{resultTable.price}€</p>
-      <p className="leftOfBox">Composition du cocktail: {resultTable.ingredients}</p>
+    <div>
+      <SingleCocktail Cocktail={Cocktail}/>
     </div>
   );
 };

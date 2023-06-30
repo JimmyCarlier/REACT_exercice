@@ -5,6 +5,7 @@ import Header from './Header';
 import LateralBar from './LateralBar';
 import LatestCocktail from './LatestCoktail';
 import MainCoktail from './MainCoktail';
+import RhumCocktail from './RhumCocktail';
 
 function App() {
 
@@ -50,16 +51,29 @@ function App() {
       price: 12,
       ingredients: ["Rhum", "Lait de coco", "Jus d'ananas"],
       isPublished: true,
+    }, {
+      id: 5,
+      name: "Bloody Mary",
+      price: 8,
+      ingredients: ["Vodka", "Jus de tomate", "Sauce Worcestershire"],
+      isPublished: true,
+    }, {
+      id: 6,
+      name: "Ti punch",
+      price: 8,
+      ingredients: ["Rhum", "Citron vert", "Sirop de canne"],
+      isPublished: true,
     }
   ];
-
+  const publishedCocktails = cocktailsFromApi.filter(cocktail => cocktail.isPublished);
   return (
     <div>
       <Header userFromApi={userFromApi}/>
-      <MainCoktail cocktailsFromApi={cocktailsFromApi}/>
-      <LatestCocktail cocktailsFromApi={cocktailsFromApi}/>
-      <AllCocktails cocktailsFromApi={cocktailsFromApi}/>
+      <MainCoktail publishedCocktails = {publishedCocktails}/>
+      <LatestCocktail publishedCocktails = {publishedCocktails}/>
+      <AllCocktails publishedCocktails={publishedCocktails}/>
       <LateralBar userFromApi={userFromApi}/>
+      <RhumCocktail publishedCocktails={publishedCocktails}/>
       <Footer/>
     </div>
   );

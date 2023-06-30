@@ -1,14 +1,12 @@
-const AllCocktails = ({ cocktailsFromApi }) => {
+import SingleCocktail from "./SingleCocktail";
+
+const AllCocktails = ({ publishedCocktails }) => {
   return (
     <div className="allCocktails">
-      {cocktailsFromApi.map((element) => {
+      {publishedCocktails.map((Cocktail) => {
         return (
-          element.isPublished && (
-            <div className="cocktails">
-              <h2>{element.name}</h2>
-              <p>Prix : {element.price}</p>
-              <p>Les ingrédients :{element.ingredients}</p>
-            </div>
+          Cocktail.isPublished && (
+            <SingleCocktail Cocktail={Cocktail}/>
           )
         );
       })}
