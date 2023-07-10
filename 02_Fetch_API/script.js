@@ -1,4 +1,4 @@
-// On récupère la div Root 
+// On récupère la div Root
 const divRoot = document.querySelector("#root");
 
 const contactFormComposent = () => {
@@ -21,7 +21,6 @@ const contactFormComposent = () => {
   divRoot.appendChild(formElement);
 };
 
-
 // On appelle l'API afin de récupérer ses donnée pour les afficher sur notre page Html
 const mealListComposent = async () => {
   const responseJson = await fetch(
@@ -37,7 +36,7 @@ const mealListComposent = async () => {
       },
       meal.strMeal
     );
-      // La div Root va prendre comme enfant mealTitleElement
+    // La div Root va prendre comme enfant mealTitleElement
     divRoot.appendChild(mealTitleElement);
     // On stock les images de l'API dans la constante
     const mealImgElement = createNodeElement("img", {
@@ -47,7 +46,6 @@ const mealListComposent = async () => {
     divRoot.appendChild(mealImgElement);
   });
 };
-
 
 // Même cas que le fetch au dessus
 const categoryListComponent = async () => {
@@ -79,13 +77,12 @@ const categoryListComponent = async () => {
   });
 };
 
-
 // On créée une constante qui va créée des balises en fonction des informations récupérer sur l'API (type de balise, classe/source etc.., et on ajotue une option de texteContent qui de base sera initialiser vide)
 const createNodeElement = (tagType, attributes, text = "") => {
   const nodeElement = document.createElement(tagType);
 
-  for (const property in attributes) {
-    nodeElement.setAttribute(property, attributes[property]);
+  for (i in attributes) {
+    nodeElement.setAttribute(i, attributes[i]);
   }
 
   nodeElement.textContent = text;
@@ -96,4 +93,3 @@ const createNodeElement = (tagType, attributes, text = "") => {
 contactFormComposent();
 categoryListComponent();
 mealListComposent();
-

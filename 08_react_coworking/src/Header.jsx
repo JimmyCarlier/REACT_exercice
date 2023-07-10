@@ -1,0 +1,16 @@
+const Header = () =>{
+    return(
+        <header>
+            <nav>
+                <ul>
+                    <li><img src="/img/LogoCowork.png" className="logo" alt="" /></li>
+                    <li>Home</li>
+                    <li>Contact</li>
+                    <li>Learn more</li>
+                </ul>
+            </nav>
+        </header>
+    )
+}
+
+export default Header
