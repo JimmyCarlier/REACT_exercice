@@ -3,6 +3,7 @@ import "./App.css";
 import Footer from "./Footer";
 import Header from "./Header";
 import CoworkingLowRate from "./CoworkingLowRate";
+import Welcome from "./Welcome";
 
 const coworkingsFromFakeApi = [
   {
@@ -56,6 +57,7 @@ function App() {
             ></path>
           </svg>
         </div>
+        <Welcome />
         <Allspace coworkingsFromFakeApi={coworkingsFromFakeApi} />
         <CoworkingLowRate coworkingsFromFakeApi={coworkingsFromFakeApi} />
       </main>

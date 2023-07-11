@@ -2,6 +2,7 @@ import Coworking from "./Coworking";
 import { useState } from "react";
 
 const Allspace = ({ coworkingsFromFakeApi }) => {
+  
   const [displayCoworking, setDisplayCoworking] = useState(false);
 
   const onClickAppear = () => {

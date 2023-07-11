@@ -8,6 +8,11 @@
 main{
   position: relative;
 }
+
+h1{
+  text-align: center;
+  padding-top: 50px;
+}
 body{
   background-color: #030dca86;
 }
