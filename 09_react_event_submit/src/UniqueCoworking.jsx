@@ -1,4 +1,4 @@
-const Card = ({ element }) => {
+const UniqueCoworking = ({ element }) => {
   return (
     <div>
       <h1>{element.name}</h1>
@@ -9,4 +9,4 @@ const Card = ({ element }) => {
   );
 };
 
-export default Card;
+export default UniqueCoworking;

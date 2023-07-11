@@ -1,5 +1,6 @@
 import './App.css';
 import ButtonSelection from './ButtonSelection';
+import ContactForm from './ContactForm';
 import Formulaire from './CreateCoworking';
 
 const coworkings = [
@@ -45,6 +46,7 @@ function App() {
     <>
     <Formulaire/>
     <ButtonSelection coworkings={coworkings}/>
+    <ContactForm />
     </>
   );
 }

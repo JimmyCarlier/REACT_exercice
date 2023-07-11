@@ -1,37 +1,37 @@
 import { useState } from "react";
-import Card from "./Card";
+import UniqueCoworking from "./UniqueCoworking";
 
 const ButtonSelection = ({ coworkings }) => {
-  const [changeCard, setChangeCard] = useState(true);
+  const [changeAdress, setchangeAdress] = useState("reset");
 
-  let myFilter = coworkings;
-
-  const btnBordeaux = () => {
-    setChangeCard("Bordeaux");
+  let handleClickFilter = (element) => {
+    setchangeAdress(element.target.value);
   };
 
-  const btnMerignac = () => {
-    setChangeCard("Merignac");
-  };
-  const btnLormont = () => {
-    setChangeCard("Lormont");
-  };
-  const btnEysines = () => {
-    setChangeCard("Eysines");
-  };
+  let filterAdress = coworkings.filter((element) => {
+    if (changeAdress === "reset") {
+      return true;
+    }
 
-  myFilter = coworkings.filter((element) => {
-    return element.address === changeCard;
+    return element.address === changeAdress;
   });
+
+  let uniqueItem = [...new Set(coworkings.map((element) => element.address))];
+
   return (
     <>
-      <button onClick={btnBordeaux}>Bordeaux</button>
-      <button onClick={btnMerignac}>Mérignac</button>
-      <button onClick={btnLormont}>Lormont</button>
-      <button onClick={btnEysines}>Eysines</button>
+      {uniqueItem.map((element) => (
+        <button value={element} onClick={handleClickFilter}>
+          {element}
+        </button>
+      ))}
 
-      {myFilter.map((element) => {
-        return <Card element={element} />;
+      <button value="reset" onClick={handleClickFilter}>
+        Tous
+      </button>
+
+      {filterAdress.map((element) => {
+        return <UniqueCoworking element={element} />;
       })}
     </>
   );
