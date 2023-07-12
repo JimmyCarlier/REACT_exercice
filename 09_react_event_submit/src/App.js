@@ -9,18 +9,20 @@ function App() {
 
   const fetchApi = async () => {
     if (coworkings.length === 0) {
-      const urlResponse = await fetch("/coworkingApi.json");
-      setCoworkings(await urlResponse.json());
+      setTimeout(async () => {
+        const urlResponse = await fetch("/coworkingApi.json");
+        setCoworkings(await urlResponse.json());
+      }, 2000);
     }
   };
 
   fetchApi();
-  
+
   return (
     <>
-      <Formulaire />
-      <ButtonSelection coworkings={coworkings} />
-      <ContactForm />
+      <Formulaire coworkings={coworkings} setCoworkings={setCoworkings} />
+      {/* <ButtonSelection coworkings={coworkings} /> */}
+      {/* <ContactForm /> */}
     </>
   );
 }

@@ -2,6 +2,8 @@ import { useState } from "react";
 import UniqueCoworking from "./UniqueCoworking";
 import Button from "react-bootstrap/Button";
 import Card from "react-bootstrap/Card";
+import Spinner from "react-bootstrap/Spinner";
+import UpdateCoworking from "./UpdateCoworking";
 
 const ButtonSelection = ({ coworkings }) => {
   const [changeAdress, setchangeAdress] = useState("reset");
@@ -22,19 +24,36 @@ const ButtonSelection = ({ coworkings }) => {
 
   return (
     <>
-      {uniqueItem.map((element) => (
-        <button value={element} onClick={handleClickFilter}>
-          {element}
-        </button>
-      ))}
-
-      <button value="reset" onClick={handleClickFilter}>
+      <div className="btnCard">
+        {uniqueItem.map((element) => (
+          <button
+            value={element}
+            className="btnForCard"
+            onClick={handleClickFilter}
+          >
+            {element}
+          </button>
+        ))}
+      </div>
+      <button value="reset" className="resetBtn" onClick={handleClickFilter}>
         Tous
       </button>
-
-      {filterAdress.map((element) => {
-        return <UniqueCoworking element={element} />;
-      })}
+      <div className="allCard">
+        {filterAdress.length === 0 ? (
+          <Spinner animation="border" role="status">
+            <span className="visually-hidden">Loading...</span>
+          </Spinner>
+        ) : (
+          filterAdress.map((element) => {
+            return (
+              <>
+                <UniqueCoworking element={element} />
+                <UpdateCoworking coworking={element} />
+              </>
+            );
+          })
+        )}
+      </div>
     </>
   );
 };

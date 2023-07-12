@@ -36,3 +36,50 @@
     transform: rotate(360deg);
   }
 }
+
+.formHeader{
+  display: flex;
+  flex-direction: column;
+  width: 20%;
+  margin: 0 auto;
+}
+
+.send{
+  margin-top: 10px;
+  width: 50%;
+  margin: 10px auto;
+}
+
+.btnCard{
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+}
+
+.btnForCard{
+border-radius: 15px;
+padding: 10px;
+}
+
+.resetBtn{
+  border-radius: 15px;
+  padding: 10px;
+  position: absolute;
+  left: 49%;
+  top: 40%;
+}
+
+.allCard{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 100px;
+  gap: 20px;
+}
+
+.lastForm{
+  display: flex;
+  flex-direction: column;
+  width: 20%;
+  margin: 50px auto;
+}

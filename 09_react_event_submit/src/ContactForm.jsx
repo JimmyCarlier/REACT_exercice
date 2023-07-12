@@ -20,7 +20,7 @@ const ContactForm = () => {
   };
   return (
     <>
-      <form onSubmit={contactFormResult}>
+      <form onSubmit={contactFormResult} className="lastForm">
         <label htmlFor="firstName">Prénom:</label>
         <input type="text" name="firstName"></input>
 
@@ -33,7 +33,7 @@ const ContactForm = () => {
         <label htmlFor="email">E-mail</label>
         <input type="text" name="email"></input>
 
-        <button>Envoyer</button>
+        <button className="send">Envoyer</button>
       </form>
       <h2>
         Merci pour votre message {contactData.firstname + " " + contactData.lastname}

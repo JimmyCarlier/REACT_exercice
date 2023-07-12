@@ -1,42 +1,60 @@
 import Card from "./UniqueCoworking";
 import { useState } from "react";
+import UniqueCoworking from "./UniqueCoworking";
 
-const Formulaire = () => {
+const Formulaire = ({ coworkings, setCoworkings }) => {
   const [coworking, setCoworking] = useState({
-    title: "",
-    commentaire: "",
-    addresse: "",
+    name: "",
+    phone: "",
+    address: "",
   });
 
   const hundleSubmit = (event) => {
     event.preventDefault();
 
     setCoworking({
-      title: event.target.titre.value,
-      commentaire: event.target.commentaire.value,
-      addresse: event.target.address.value,
+      name: event.target.name.value,
+      phone: event.target.phone.value,
+      address: event.target.address.value,
     });
-    event.target.reset();
+    // event.target.reset();
+
+    const newCoworkings = [
+      ...coworkings,
+      {
+        name: event.target.name.value,
+        phone: event.target.phone.value,
+        address: event.target.address.value,
+      },
+    ];
+
+    setCoworkings(newCoworkings);
+
+    console.log(coworkings);
   };
 
   return (
     <>
-      <form onSubmit={hundleSubmit}>
-        <label htmlFor="titre">Titre</label>
-        <input type="text" name="titre"></input>
+      {coworkings.map((element) => {
+        return <p>{element.name}</p>;
+      })}
 
-        <label htmlFor="commentaire">Commentaire</label>
-        <textarea name="commentaire"></textarea>
+      <form onSubmit={hundleSubmit} className="formHeader">
+        <label htmlFor="name">name</label>
+        <input type="text" name="name"></input>
 
         <label htmlFor="address">Adresse</label>
         <input type="text" name="address"></input>
 
-        <button>Envoyer</button>
+        <label htmlFor="phone">phone</label>
+        <input type="text" name="phone"></input>
+
+        <button className="send">Envoyer</button>
       </form>
 
-      <h1>{coworking.title}</h1>
-      <p>{coworking.commentaire}</p>
-      <p>{coworking.addresse}</p>
+      <h1>{coworking.name}</h1>
+      <p>{coworking.phone}</p>
+      <p>{coworking.address}</p>
     </>
   );
 };
