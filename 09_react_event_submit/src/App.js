@@ -1,52 +1,26 @@
-import './App.css';
-import ButtonSelection from './ButtonSelection';
-import ContactForm from './ContactForm';
-import Formulaire from './CreateCoworking';
-
-const coworkings = [
-  {
-    id: 1,
-    name: "Coworking 1",
-    address: "Bordeaux",
-    phone: "123456789",
-    img: "https://picsum.photos/200/300",
-  },
-  {
-    id: 2,
-    name: "Coworking 2",
-    address: "Merignac",
-    phone: "123456789",
-    img: "https://picsum.photos/200/300",
-  },
-  {
-    id: 3,
-    name: "Coworking 3",
-    address: "Bordeaux",
-    phone: "123456789",
-    img: "https://picsum.photos/200/300",
-  },
-  {
-    id: 4,
-    name: "Coworking 4",
-    address: "Eysines",
-    phone: "123456789",
-    img: "https://picsum.photos/200/300",
-  },
-  {
-    id: 5,
-    name: "Coworking 5",
-    address: "Lormont",
-    phone: "123456789",
-    img: "https://picsum.photos/200/300",
-  },
-];
+import "./App.css";
+import ButtonSelection from "./ButtonSelection";
+import ContactForm from "./ContactForm";
+import Formulaire from "./CreateCoworking";
+import { useState } from "react";
 
 function App() {
+  const [coworkings, setCoworkings] = useState([]);
+
+  const fetchApi = async () => {
+    if (coworkings.length === 0) {
+      const urlResponse = await fetch("/coworkingApi.json");
+      setCoworkings(await urlResponse.json());
+    }
+  };
+
+  fetchApi();
+  
   return (
     <>
-    <Formulaire/>
-    <ButtonSelection coworkings={coworkings}/>
-    <ContactForm />
+      <Formulaire />
+      <ButtonSelection coworkings={coworkings} />
+      <ContactForm />
     </>
   );
 }
